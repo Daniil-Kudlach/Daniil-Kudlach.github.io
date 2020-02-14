@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Space Project</title>
+    <link rel="stylesheet" href="style/canvas.css">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <audio preload="auto" id="sound-menu" loop><source src="audio/menu.mp3"></source></audio>
+    <audio preload="auto" id="sound-game" loop><source src="audio/game2.mp3"></source></audio>
+    <div class="mainMenu">
+        <div class="menu">
+            <div class="btnWrapper"><span class="btn new-game">NEW GAME</span></div>
+            <div class="btnWrapper disable"><span class="btn continue">CONTINUE</span></div>
+            <div class="btnWrapper disable"><span class="btn about">ABOUT</span class="about"></div>
+        </div>
+    </div>
+    <div class="panel hidden"><span class="next-type-name"></span><div class="mass-loader"></div></div>
+    <div class="modal hidden"><h2 class="gameover">GAME OVER</h2><div class= "btnGameOver"><span>CONTINUE</span></div></div>
+    <div class="mute"></div>
+    <script src="src/main.js" type="module"></script>
+</body>
+
+</html>

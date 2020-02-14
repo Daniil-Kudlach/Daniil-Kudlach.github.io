@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: crosshair;
+    background-color: #050818;
+}
+
+.mainMenu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 1000;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('../img/fog2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mute{
+    width:20px;
+    height:20px;
+    border-radius: 5px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color:white;
+    z-index:10000;
+    background-image: url(../img/volume.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    cursor: pointer;
+}
+
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -2;
+}
+
+.modal{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color: #0508187c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100000;
+}
+
+.btnGameOver{
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btnGameOver:hover{
+    background-color: white;
+    color: #0508187c;
+    cursor: pointer;
+
+}
+
+
+
+.menu{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btnWrapper{
+    width: 80%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+}
+
+.btnWrapper span{
+    border: 1px solid #050818;
+    padding: 5px;
+    user-select: none;
+    border-radius: 5px;
+    transition-duration: .05s;
+    background-color: #05081879;
+}
+
+.btnWrapper span:hover{
+    transform: scale(1.1);
+    background-color: #05081879;
+    text-shadow: 0 0 5px white;
+    box-shadow: 0 0 10px 5px #050818;
+    cursor: pointer;
+}
+.btnWrapper span:active{
+    transform: scale(.9);
+    box-shadow: inset 0 0 10px 5px #050818;
+}
+
+.muteClick{
+    background-image: url('../img/mute.svg');
+}
+
+.hidden{
+    display: none;
+    z-index: -10;
+}
+
+.disable{
+    opacity: .4;
+}
+
+.disable span:hover{
+    opacity: .3;
+    cursor: not-allowed;
+}
+
+.gameover {
+    z-index: 10;
+    font-size: 20pt;
+    color: white;
+}
+
+.panel{
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mass-loader{
+    display: inline-block;
+    height: 90%;
+    width: 200px;
+    height: 16px;
+    border: 2px solid white;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.panel span{
+    color: white;
+    font-weight: bold;
+}
