@@ -66,12 +66,12 @@ export class ObjectsGenerator {
     }
 
     getParam() {
-        let m = this.random(1, 2);
+        let m = this.random(1, 3);
         return {
             mass: m,
             src: this.src,
-            x: Math.random() > 0.3 ? this.random(1, 1000) * -1 : this.random(1, 3000),
-            y: Math.random() > 0.3 ? this.random(1, 1000) * -1 : this.random(1, 3000),
+            x: Math.random() > 0.3 ? this.random(1, 2000) * -1 : this.random(1, 4000),
+            y: Math.random() > 0.3 ? this.random(1, 2000) * -1 : this.random(1, 4000),
             dir: {
                 x: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1,
                 y: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1
