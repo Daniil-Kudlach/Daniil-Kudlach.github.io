@@ -70,8 +70,8 @@ export class ObjectsGenerator {
         return {
             mass: m,
             src: this.src,
-            x: this.randomPosition(1, 2000),
-            y: this.randomPosition(1, 2000),
+            x: this.randomPosition(2000, 2500),
+            y: this.randomPosition(2000, 2500),
             dir: {
                 x: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1,
                 y: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1
@@ -88,12 +88,12 @@ export class ObjectsGenerator {
     go(ev) {
         this.objs.forEach((el, i) => {
             if (!el.orb) {
-                if (el.x < -2100) {
+                if (el.x < -3100) {
                     el.x = this.random(2000, 2500);
                 } else if (el.x > 3100) {
                     el.x = this.random(1000, 1500) * -1
                 }
-                if (el.y < -2100) {
+                if (el.y < -3100) {
                     el.y = this.random(2000, 2500)
                 } else if (el.y > 3100) {
                     el.y = this.random(1000, 1500) * -1
