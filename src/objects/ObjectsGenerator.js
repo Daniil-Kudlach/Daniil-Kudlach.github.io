@@ -58,7 +58,7 @@ export class ObjectsGenerator {
         this.h = param.h;
         if (this.objs.length == 0) {
             this.objs.push(new ObjectTemplate(param.ctx, this.getUserParam(param)));
-            for (let i = 0; i < 900; i++) {
+            for (let i = 0; i < 600; i++) {
                 let a = new ObjectTemplate(param.ctx, this.getParam(param), i);
                 this.objs.push(a);
             }
