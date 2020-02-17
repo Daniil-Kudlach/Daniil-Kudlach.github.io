@@ -5,12 +5,12 @@ export class MoveAnimationsModel {
         this.middle = {};
         this.direction = {};
         this.move = false;
-        this.speedDivider = 500;
+        this.speedDivider = 600;
     }
 
     setMove() {
         this.move = true;
-        this.speedDivider = 500;
+        this.speedDivider = 600;
     }
 
     stop() {
@@ -18,7 +18,7 @@ export class MoveAnimationsModel {
     }
 
     easeOut() {
-        !this.move ? this.speedDivider += .5 : 0;
+        !this.move ? this.speedDivider += .4 : 0;
     }
 
     getSpeed() {
