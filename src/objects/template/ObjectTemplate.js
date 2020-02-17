@@ -262,7 +262,7 @@ export class ObjectTemplate {
     eat(child) {
         child.orb = false;
         this.addMass(child.mass);
-        child.newPosition(Math.random() * 10000, Math.random() * 10000);
+        child.newPosition(Math.random() * 3000, Math.random() * 3000);
         this.rmwChild(child);
         return;
     }

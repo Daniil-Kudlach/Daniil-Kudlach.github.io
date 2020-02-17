@@ -66,7 +66,7 @@ export class ObjectsGenerator {
     }
 
     getParam() {
-        let m = this.random(1, 3);
+        let m = this.random(1, 4);
         return {
             mass: m,
             src: this.src,
@@ -113,7 +113,7 @@ export class ObjectsGenerator {
     }
 
     collisionCheck(objA, objB) {
-        let squareX = Math.pow(Math.abs(objA.x - objB.x), 2);
+        let squareX = Math.pow(Math.abs(objA.x - objB.x), 2); 
         let squareY = Math.pow(Math.abs(objA.y - objB.y), 2);
         let hypothenuse = Math.sqrt(squareX + squareY);
         let distance = hypothenuse - objA.halfWidth - objB.halfWidth;
