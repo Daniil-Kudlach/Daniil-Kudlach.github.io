@@ -88,14 +88,14 @@ export class ObjectsGenerator {
     go(ev) {
         this.objs.forEach((el, i) => {
             if (!el.orb) {
-                if (el.x < -1100) {
+                if (el.x < -2200) {
                     el.x = this.random(this.w+500, this.w + 1000);
-                } else if (el.x > this.w + 1100) {
+                } else if (el.x > this.w + 2200) {
                     el.x = this.random(500, 1000) * -1
                 }
-                if (el.y < -1100) {
+                if (el.y < -2200) {
                     el.y = this.random(this.h+500, this.h + 1000)
-                } else if (el.y > this.h + 1100) {
+                } else if (el.y > this.h + 2200) {
                     el.y = this.random(500, 1000) * -1
                 }
             }
@@ -133,8 +133,8 @@ export class ObjectsGenerator {
             if (objA.mass == objB.mass) {
                 objA.shadow('red');
                 objB.shadow('red');
-                objA.isUser ? 0 : objA.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000));
-                objB.isUser ? 0 : objB.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000));
+                objA.isUser ? 0 : objA.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100));
+                objB.isUser ? 0 : objB.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100));
                 if (objA.mass <= 5) {
                     objA.addMass(objB.mass);
                     objA.addMass(objB.mass);
@@ -148,7 +148,7 @@ export class ObjectsGenerator {
             } else if (objA.mass > objB.mass) {
                 if (objB.isUser) {
                     objB.minusMass(objA.mass);
-                    objA.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000))
+                    objA.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100))
                     objA.collision = false;
                     objB.collision = false;
                     return;
@@ -159,7 +159,7 @@ export class ObjectsGenerator {
             } else if (objA.mass < objB.mass) {
                 if (objA.isUser) {
                     objA.minusMass(objB.mass);
-                    objB.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000))
+                    objB.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100))
                     objA.collision = false;
                     objB.collision = false;
                     return;

@@ -81,7 +81,7 @@ export class ObjectTemplate {
     court(obj) {
         if (this.mass <= 5) {
             this.addMass(obj.mass);
-            obj.newPosition(this.randomPos(2000,3000),this.randomPos(2000,3000));
+            obj.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100));
             this.collision = false;
             this.shadow('orange');
         } else if (this.mass <= 7 && this.mass > 5) {
@@ -101,7 +101,7 @@ export class ObjectTemplate {
                 this.shadow('orange');
             } else {
                 this.minusMass(obj.mass);
-                obj.newPosition(this.randomPos(2000,3000), this.randomPos(2000,3000));
+                obj.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100));
                 this.shadow('orange');
             }
             this.collision = false;
@@ -194,7 +194,7 @@ export class ObjectTemplate {
             if (this.isUser) {
                 this.notify('gameover', this);
             } else {
-                this.newPosition(this.randomPos(2000,3000), this.randomPos(2000,3000));
+                this.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100));
             }
         } else if (this.mass == 1) {
             this.evolution(0);
@@ -278,7 +278,7 @@ export class ObjectTemplate {
     eat(child) {
         child.orb = false;
         this.addMass(child.mass);
-        child.newPosition(this.randomPos(2000,3000), this.randomPos(2000,3000));
+        child.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100));
         this.rmwChild(child);
         return;
     }
