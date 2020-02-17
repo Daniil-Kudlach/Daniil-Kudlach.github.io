@@ -70,8 +70,8 @@ export class ObjectsGenerator {
         return {
             mass: m,
             src: this.src,
-            x: this.randomPosition(1500, 2000),
-            y: this.randomPosition(1500, 2000),
+            x: this.randomPosition(1, 2000),
+            y: this.randomPosition(1, 2000),
             dir: {
                 x: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1,
                 y: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1
