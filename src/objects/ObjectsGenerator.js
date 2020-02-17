@@ -134,12 +134,11 @@ export class ObjectsGenerator {
                 objA.shadow('red');
                 objB.shadow('red');
                 if(objA.isUser){
-                    objB.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
+                    objB.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100));
                 }else if(objB.isUser){
-                    objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
+                    objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100));
                 }else{
-                    objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
-                    objB.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
+                    objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100));
                 }
                 if (objA.mass <= 5) {
                     objA.addMass(objB.mass);
