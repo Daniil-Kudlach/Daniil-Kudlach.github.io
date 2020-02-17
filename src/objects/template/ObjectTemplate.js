@@ -146,7 +146,7 @@ export class ObjectTemplate {
     }
 
     minusMass(m) {
-        this.percent -= Math.floor(m / this.mass * 10);
+        this.percent -= Math.floor(m / this.mass * 20);
         this.isUser ? this.notify('changeMass', {
             p: this.percent,
             t: this.src.indexOf(this.type)
@@ -164,7 +164,7 @@ export class ObjectTemplate {
     }
 
     addMass(m) {
-        this.percent += Math.floor(m / this.mass * 10);
+        this.percent += Math.floor(m / this.mass * 20);
         this.isUser ? this.notify('changeMass', {
             p: this.percent,
             t: this.src.indexOf(this.type)
