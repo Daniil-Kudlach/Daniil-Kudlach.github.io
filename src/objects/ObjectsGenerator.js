@@ -133,8 +133,12 @@ export class ObjectsGenerator {
             if (objA.mass == objB.mass) {
                 objA.shadow('red');
                 objB.shadow('red');
-                objA.isUser ? 0 : objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100));
-                objB.isUser ? 0 : objB.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100));
+                if((!objA.isUser) && (!objB.isUser)){
+                    objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
+                }else{
+                    objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
+                    objB.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
+                }
                 if (objA.mass <= 5) {
                     objA.addMass(objB.mass);
                     objA.addMass(objB.mass);
