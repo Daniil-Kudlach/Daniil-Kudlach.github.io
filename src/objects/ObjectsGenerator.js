@@ -58,7 +58,7 @@ export class ObjectsGenerator {
         this.h = param.h;
         if (this.objs.length == 0) {
             this.objs.push(new ObjectTemplate(param.ctx, this.getUserParam(param)));
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 800; i++) {
                 let a = new ObjectTemplate(param.ctx, this.getParam(param), i);
                 this.objs.push(a);
             }
@@ -70,8 +70,8 @@ export class ObjectsGenerator {
         return {
             mass:  m,
             src: this.src,
-            x: this.randomPosition(1, 2000),
-            y: this.randomPosition(1, 2000),
+            x: this.randomPosition(1, this.w),
+            y: this.randomPosition(1, this.h),
             dir: {
                 x: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1,
                 y: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1
@@ -89,13 +89,13 @@ export class ObjectsGenerator {
         this.objs.forEach((el, i) => {
             if (!el.orb) {
                 if (el.x < -1100) {
-                    el.x = this.random(2000, 2500);
-                } else if (el.x > 3100) {
+                    el.x = this.random(this.w+500, this.w + 1000);
+                } else if (el.x > this.w + 1100) {
                     el.x = this.random(500, 1000) * -1
                 }
                 if (el.y < -1100) {
-                    el.y = this.random(2000, 2500)
-                } else if (el.y > 3100) {
+                    el.y = this.random(this.h+500, this.h + 1000)
+                } else if (el.y > this.h + 1100) {
                     el.y = this.random(500, 1000) * -1
                 }
             }
