@@ -133,9 +133,9 @@ export class ObjectsGenerator {
             if (objA.mass == objB.mass) {
                 objA.shadow('red');
                 objB.shadow('red');
-                if((!objA.isUser)){
+                if((objA.isUser)){
                     objB.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
-                }else if((!objB.isUser)){
+                }else if((objB.isUser)){
                     objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
                 }else{
                     objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
