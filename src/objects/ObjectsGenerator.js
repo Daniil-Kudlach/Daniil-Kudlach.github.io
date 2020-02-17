@@ -66,7 +66,7 @@ export class ObjectsGenerator {
     }
 
     getParam() {
-        let m = this.random(1, 5);
+        let m = this.random(1, 10);
         return {
             mass: m,
             src: this.src,
@@ -82,7 +82,7 @@ export class ObjectsGenerator {
     }
 
     randomPosition(min, max) {
-        return Math.random() > 0.5 ? this.random(min, max) * -1 : this.random(min, max);
+        return (Math.random() > 0.5 ? this.random(min, max) * -1 : this.random(min, max));
     }
 
     go(ev) {
