@@ -73,8 +73,8 @@ export class ObjectsGenerator {
             x: this.randomPosition(1500, 2000),
             y: this.randomPosition(1500, 2000),
             dir: {
-                x: Math.random() > 0.5 ? Math.random() * -2 : Math.random() * 2,
-                y: Math.random() > 0.5 ? Math.random() * -2 : Math.random() * 2
+                x: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1,
+                y: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1
             },
             m: this.m,
             moving: true
