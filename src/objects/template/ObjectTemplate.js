@@ -256,8 +256,8 @@ export class ObjectTemplate {
 
     changePosition(par) {
         if (this.moving && !this.orb) {
-            this.x -= par.dir.x * (this.speed / par.div / this.mass) + this.dir.x;
-            this.y -= par.dir.y * (this.speed / par.div / this.mass) + this.dir.y;
+            this.x -= par.dir.x * (this.speed / par.div) + this.dir.x;
+            this.y -= par.dir.y * (this.speed / par.div) + this.dir.y;
         }
         return;
     }
