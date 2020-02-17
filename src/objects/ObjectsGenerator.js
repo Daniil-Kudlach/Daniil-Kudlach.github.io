@@ -66,8 +66,7 @@ export class ObjectsGenerator {
     }
 
     getParam() {
-        let m;
-        Math.random() < .01? m=6:this.random(1, 4);
+        let m = this.random(1, 5);
         return {
             mass:  m,
             src: this.src,
