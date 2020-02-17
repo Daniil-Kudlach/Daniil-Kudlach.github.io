@@ -58,7 +58,7 @@ export class ObjectsGenerator {
         this.h = param.h;
         if (this.objs.length == 0) {
             this.objs.push(new ObjectTemplate(param.ctx, this.getUserParam(param)));
-            for (let i = 0; i < 1000; i++) {
+            for (let i = 0; i < 900; i++) {
                 let a = new ObjectTemplate(param.ctx, this.getParam(param), i);
                 this.objs.push(a);
             }
@@ -70,8 +70,8 @@ export class ObjectsGenerator {
         return {
             mass: m,
             src: this.src,
-            x: Math.random() > 0.3 ? this.random(1, 2000) * -1 : this.random(1, 4000),
-            y: Math.random() > 0.3 ? this.random(1, 2000) * -1 : this.random(1, 4000),
+            x: this.randomPosition(1, 3000),
+            y: this.randomPosition(1, 3000),
             dir: {
                 x: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1,
                 y: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1
@@ -81,13 +81,17 @@ export class ObjectsGenerator {
         }
     }
 
+    randomPosition(min, max) {
+        return Math.random() > 0.5 ? this.random(min, max) * -1 : this.random(min, max);
+    }
+
     go(ev) {
         this.objs.forEach((el, i) => {
             if (!el.orb) {
-                el.x < -1100 ? el.x = 3000 : 0;
-                el.y < -1100 ? el.y = 3000 : 0;
-                el.x > 3100 ? el.x = -1000 : 0;
-                el.y > 3100 ? el.y = -1000 : 0;
+                el.x < -1100 ? el.x = this.random(1, 3000) : 0;
+                el.y < -1100 ? el.y = this.random(1, 3000) : 0;
+                el.x > 3100 ? el.x = this.random(1, 2000) * -1 : 0;
+                el.y > 3100 ? el.y = this.random(1, 2000) * -1 : 0;
             }
             if (el.x < -500 || el.y < -500 || el.x > this.w + 500 || el.y > this.h + 500) {
                 el.changePosition(ev);
@@ -113,7 +117,7 @@ export class ObjectsGenerator {
     }
 
     collisionCheck(objA, objB) {
-        let squareX = Math.pow(Math.abs(objA.x - objB.x), 2); 
+        let squareX = Math.pow(Math.abs(objA.x - objB.x), 2);
         let squareY = Math.pow(Math.abs(objA.y - objB.y), 2);
         let hypothenuse = Math.sqrt(squareX + squareY);
         let distance = hypothenuse - objA.halfWidth - objB.halfWidth;
@@ -123,8 +127,8 @@ export class ObjectsGenerator {
             if (objA.mass == objB.mass) {
                 objA.shadow('red');
                 objB.shadow('red');
-                objA.isUser ? 0 : objA.newPosition(3000, -1000);
-                objB.isUser ? 0 : objB.newPosition(-999, 2999);
+                objA.isUser ? 0 : objA.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000));
+                objB.isUser ? 0 : objB.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000));
                 if (objA.mass <= 2) {
                     objA.addMass(objB.mass);
                     objA.addMass(objB.mass);
@@ -138,7 +142,7 @@ export class ObjectsGenerator {
             } else if (objA.mass > objB.mass) {
                 if (objB.isUser) {
                     objB.minusMass(objA.mass);
-                    objA.newPosition(-500, 1000)
+                    objA.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000))
                     objA.collision = false;
                     objB.collision = false;
                     return;
@@ -149,7 +153,7 @@ export class ObjectsGenerator {
             } else if (objA.mass < objB.mass) {
                 if (objA.isUser) {
                     objA.minusMass(objB.mass);
-                    objB.newPosition(1999, -999)
+                    objB.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000))
                     objA.collision = false;
                     objB.collision = false;
                     return;
