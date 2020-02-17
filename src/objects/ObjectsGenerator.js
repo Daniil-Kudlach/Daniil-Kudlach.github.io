@@ -70,7 +70,7 @@ export class ObjectsGenerator {
         return {
             mass:  m,
             src: this.src,
-            x: this.randomPosition(1, this.w),
+            x: this.F(1, this.w),
             y: this.randomPosition(1, this.h),
             dir: {
                 x: Math.random() > 0.5 ? Math.random() * -1 : Math.random() * 1,
@@ -133,8 +133,8 @@ export class ObjectsGenerator {
             if (objA.mass == objB.mass) {
                 objA.shadow('red');
                 objB.shadow('red');
-                objA.isUser ? 0 : objA.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100));
-                objB.isUser ? 0 : objB.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100));
+                objA.isUser ? 0 : objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100));
+                objB.isUser ? 0 : objB.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100));
                 if (objA.mass <= 5) {
                     objA.addMass(objB.mass);
                     objA.addMass(objB.mass);
@@ -148,7 +148,7 @@ export class ObjectsGenerator {
             } else if (objA.mass > objB.mass) {
                 if (objB.isUser) {
                     objB.minusMass(objA.mass);
-                    objA.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100))
+                    objA.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
                     objA.collision = false;
                     objB.collision = false;
                     return;
@@ -159,7 +159,7 @@ export class ObjectsGenerator {
             } else if (objA.mass < objB.mass) {
                 if (objA.isUser) {
                     objA.minusMass(objB.mass);
-                    objB.newPosition(this.randomPos(2000,2100), this.randomPos(2000,2100))
+                    objB.newPosition(this.randomPosition(2000,2100), this.randomPosition(2000,2100))
                     objA.collision = false;
                     objB.collision = false;
                     return;
