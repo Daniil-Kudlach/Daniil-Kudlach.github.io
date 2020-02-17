@@ -66,7 +66,7 @@ export class ObjectsGenerator {
     }
 
     getParam() {
-        let m = this.random(1, 5);
+        let m = this.random(1, 4);
         return {
             mass:  m,
             src: this.src,
@@ -135,7 +135,7 @@ export class ObjectsGenerator {
                 objB.shadow('red');
                 objA.isUser ? 0 : objA.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000));
                 objB.isUser ? 0 : objB.newPosition(this.randomPosition(2000, 3000), this.randomPosition(2000, 3000));
-                if (objA.mass <= 2) {
+                if (objA.mass <= 5) {
                     objA.addMass(objB.mass);
                     objA.addMass(objB.mass);
                 } else {
