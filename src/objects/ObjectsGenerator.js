@@ -88,10 +88,10 @@ export class ObjectsGenerator {
     go(ev) {
         this.objs.forEach((el, i) => {
             if (!el.orb) {
-                el.x < -1100 ? el.x = this.random(1, 3000) : 0;
-                el.y < -1100 ? el.y = this.random(1, 3000) : 0;
-                el.x > 3100 ? el.x = this.random(1, 2000) * -1 : 0;
-                el.y > 3100 ? el.y = this.random(1, 2000) * -1 : 0;
+                el.x < -2100 ? el.x = this.random(2000, 3000) : 0;
+                el.y < -2100 ? el.y = this.random(2000, 3000) : 0;
+                el.x > 3100 ? el.x = this.random(1000, 2000) * -1 : 0;
+                el.y > 3100 ? el.y = this.random(1000, 2000) * -1 : 0;
             }
             if (el.x < -500 || el.y < -500 || el.x > this.w + 500 || el.y > this.h + 500) {
                 el.changePosition(ev);
