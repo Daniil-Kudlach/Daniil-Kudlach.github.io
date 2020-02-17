@@ -66,7 +66,7 @@ export class ObjectsGenerator {
     }
 
     getParam() {
-        let m = this.random(1, 6);
+        let m = this.random(1, 5);
         return {
             mass: m,
             src: this.src,
@@ -88,15 +88,15 @@ export class ObjectsGenerator {
     go(ev) {
         this.objs.forEach((el, i) => {
             if (!el.orb) {
-                if (el.x < -3100) {
+                if (el.x < -1100) {
                     el.x = this.random(2000, 2500);
                 } else if (el.x > 3100) {
-                    el.x = this.random(1000, 1500) * -1
+                    el.x = this.random(500, 1000) * -1
                 }
-                if (el.y < -3100) {
+                if (el.y < -1100) {
                     el.y = this.random(2000, 2500)
                 } else if (el.y > 3100) {
-                    el.y = this.random(1000, 1500) * -1
+                    el.y = this.random(500, 1000) * -1
                 }
             }
             if (el.x < -300 || el.y < -300 || el.x > this.w + 300 || el.y > this.h + 300) {
