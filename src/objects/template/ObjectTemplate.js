@@ -147,13 +147,13 @@ export class ObjectTemplate {
 
     minusMass(m) {
         if(this.isUser){
-            this.percent -= Math.floor((m * 5) / this.mass);
+            this.percent -= Math.floor(m / this.mass * 10);
             this.notify('changeMass', {
                 p: this.percent,
                 t: this.src.indexOf(this.type)
             });
         }else{
-            this.percent -= Math.floor(m / (this.mass));
+            this.percent -= Math.floor(m / this.mass * 2);
         }
         if (this.percent <= 0) {
             this.mass -= 1;
@@ -169,13 +169,13 @@ export class ObjectTemplate {
 
     addMass(m) {
         if(this.isUser){
-            this.percent += Math.floor((m * 5) / this.mass);
+            this.percent += Math.floor(m / this.mass * 2);
             this.notify('changeMass', {
                 p: this.percent,
                 t: this.src.indexOf(this.type)
             });
         }else{
-            this.percent += Math.floor((m * 20) / this.mass);
+            this.percent += Math.floor(m / this.mass * 10);
         }
         if (this.percent >= 100) {
             this.mass += 1;
